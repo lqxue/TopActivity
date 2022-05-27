@@ -22,7 +22,7 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:padding="8dp"
-                android:text="Activity Info"
+                android:text="卸载工具"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
 
@@ -43,6 +43,28 @@
             android:orientation="horizontal" >
 
             <TextView
+                android:id="@+id/uninstall_app"
+                android:clickable="true"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:background="#60111111"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="卸载  当前显示的软件"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#60808080"
+            android:orientation="horizontal" >
+
+            <TextView
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_marginRight="1dp"
@@ -50,7 +72,7 @@
                 android:background="#60111111"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="App name"
+                android:text="应用:"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
@@ -68,6 +90,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#60808080"
@@ -99,6 +122,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#60808080"

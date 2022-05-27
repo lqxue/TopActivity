@@ -31,7 +31,7 @@ public class WindowUtil {
 	private static int xInitMargin = 0;
 	private static int yInitMargin = 0;
 	private static String text, text1;
-	private static TextView appName, packageName, className;
+	private static TextView appName, packageName, className,uninstall_app;
 	private static ClipboardManager clipboard;
 	public static boolean viewAdded = false;
 
@@ -50,11 +50,16 @@ public class WindowUtil {
 
 		sView = LayoutInflater.from(context).inflate(R.layout.window_tasks, null);
 		clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+		uninstall_app = sView.findViewById(R.id.uninstall_app);
 		appName = sView.findViewById(R.id.text);
 		packageName = sView.findViewById(R.id.text1);
 		className = sView.findViewById(R.id.text2);
 		ImageView closeBtn = sView.findViewById(R.id.closeBtn);
-
+		uninstall_app.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				uninstall(context,packageName.getText().toString().trim());
+			}
+		});
 		closeBtn.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				dismiss(context);
