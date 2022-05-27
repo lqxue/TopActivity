@@ -52,7 +52,7 @@
                 android:background="#60111111"
                 android:gravity="center"
                 android:padding="8dp"
-                android:text="卸载  当前显示的软件"
+                android:text="点击此处  卸载\n当前显示的软件"
                 android:textColor="#FFFFFF"
                 android:textSize="13sp" />
         </LinearLayout>

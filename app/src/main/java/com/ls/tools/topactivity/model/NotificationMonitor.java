@@ -53,7 +53,7 @@ public class NotificationMonitor extends BroadcastReceiver {
 
 		builder = new NotificationCompat.Builder(context, CHANNEL_ID)
 				.setContentTitle(context.getString(R.string.is_running, context.getString(R.string.app_name)))
-				.setSmallIcon(R.drawable.ic_shortcut).setPriority(NotificationCompat.PRIORITY_HIGH)
+				.setSmallIcon(R.drawable.ic_launcher).setPriority(NotificationCompat.PRIORITY_HIGH)
 				.setContentText(context.getString(R.string.touch_to_open))
 				.setColor(ContextCompat.getColor(context, R.color.layerColor)).setVisibility(NotificationCompat.VISIBILITY_SECRET)
 				.setOngoing(!isPaused);
