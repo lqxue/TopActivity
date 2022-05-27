@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">顶部Activity</string>
+<!--    <string name="accessibility_permission">We use accessibility permission to monitor window change events. So that we can show the current activity info.</string>-->
+    <string name="accessibility_permission">我们使用可访问权限来监视窗口更改事件。这样我们就可以显示当前的活动信息。</string>
+<!--    <string name="show_window">Show floating window</string>-->
+    <string name="show_window">显示浮动窗口</string>
+    <string name="use_toggle_notification">Don\'t show notification</string>
+    <string name="is_running">%s is running</string>
+    <string name="touch_to_open">触摸设置</string>
+    <string name="noti_action_stop">Stop</string>
+    <string name="use_accessibility_service">使用无障碍服务</string>
+    <string name="dialog_accessibility_permission_title">可访问性权限</string>
+<!--    <string name="dialog_accessibility_permission_content">As per your choice, please grant permission to use Accessibility Service for Current Activity app in order to get current activity info</string>-->
+    <string name="dialog_accessibility_permission_content">根据您的选择，请授予顶部Activity使用无障碍服务的权限，以便获取当前活动信息</string>
+<!--    <string name="dialog_usage_access_title">Usage Access</string>-->
+    <string name="dialog_usage_access_title">使用权限</string>
+<!--    <string name="dialog_usage_access_content">In order to monitor current task, please grant Usage Access permission for Current Activity app</string>-->
+    <string name="dialog_usage_access_content">为了监控当前任务，请授予当前活动应用程序的使用访问权限</string>
+<!--    <string name="dialog_usage_access_ok">Settings</string>-->
+    <string name="dialog_ok">设置</string>
+<!--    <string name="dialog_overlay_permission_title">Overlay Permission</string>-->
+    <string name="dialog_overlay_permission_title">叠加权限</string>
+<!--    <string name="dialog_overlay_permission_content">Please enable overlay permission to show window over other apps</string>-->
+    <string name="dialog_overlay_permission_content">请启用覆盖权限以在其他应用程序上显示窗口</string>
+    <string name="dialog_close">关闭</string>
+    <string name="show_current_activity_info">显示当前活动信息</string>
+</resources>

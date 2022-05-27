@@ -1,0 +1,94 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:background="@color/color_1a191e"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="8dp"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/showWindoww"
+            android:textSize="16sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textPrimary"
+            android:text="@string/show_window"/>
+
+        <Switch
+            android:id="@+id/sw_window"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="@color/color_f8f8f8"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/useNotificationPref"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/disableNotif"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textPrimary"
+            android:text="@string/use_toggle_notification"/>
+
+        <Switch
+            android:id="@+id/sw_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_useNotificationPref"
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="@color/color_f8f8f8"/>
+    <LinearLayout
+        android:id="@+id/useAccessibility"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:minHeight="48dp"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/disableAccess"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/textPrimary"
+            android:text="@string/use_accessibility_service"/>
+
+        <Switch
+            android:id="@+id/sw_accessibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_useAccess"
+        android:layout_width="match_parent"
+        android:layout_height="0.7dp"
+        android:background="@color/color_f8f8f8"/>
+</LinearLayout>
