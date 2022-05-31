@@ -57,7 +57,7 @@ public class WindowUtil {
 		ImageView closeBtn = sView.findViewById(R.id.closeBtn);
 		uninstall_app.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				uninstall(context,packageName.getText().toString().trim());
+				toSelfSetting(context,packageName.getText().toString().trim());
 			}
 		});
 		closeBtn.setOnClickListener(new View.OnClickListener() {
@@ -77,8 +77,8 @@ public class WindowUtil {
 
 		packageName.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				copyString(context, text, "Package name copied");
-				uninstall(context,packageName.getText().toString().trim());
+//				copyString(context, text, "Package name copied");
+				toSelfSetting(context,packageName.getText().toString().trim());
 			}
 		});
 
@@ -116,6 +116,22 @@ public class WindowUtil {
 				return true;
 			}
 		});
+	}
+
+	public static void toSelfSetting(Context context,String packageName) {
+
+		Intent mIntent = new Intent();
+		mIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		if (Build.VERSION.SDK_INT >= 9) {
+			mIntent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+			mIntent.setData(Uri.fromParts("package", packageName, null));
+		} else if (Build.VERSION.SDK_INT <= 8) {
+			mIntent.setAction(Intent.ACTION_VIEW);
+			mIntent.setClassName("com.android.settings", "com.android.setting.InstalledAppDetails");
+			mIntent.putExtra("com.android.settings.ApplicationPkgName", packageName);
+		}
+		context.startActivity(mIntent);
+
 	}
 
 	/**
