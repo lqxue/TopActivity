@@ -120,20 +120,22 @@ public class MainActivity extends AppCompatActivity {
 								}
 							}).show();
 					mWindowSwitch.setChecked(false);
-				} else if (!usageStats(MainActivity.this)) {
-					builder.setTitle(R.string.dialog_usage_access_title).setMessage(
-							R.string.dialog_usage_access_content)
-							.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
-								@Override
-								public void onClick(DialogInterface di, int btn) {
-									Intent intent = new Intent();
-									intent.setAction("android.settings.USAGE_ACCESS_SETTINGS");
-									startActivity(intent);
-									di.dismiss();
-								}
-							}).show();
-					mWindowSwitch.setChecked(false);
-				} else {
+				}
+//				else if (!usageStats(MainActivity.this)) {
+//					builder.setTitle(R.string.dialog_usage_access_title).setMessage(
+//							R.string.dialog_usage_access_content)
+//							.setPositiveButton(R.string.dialog_ok, new DialogInterface.OnClickListener() {
+//								@Override
+//								public void onClick(DialogInterface di, int btn) {
+//									Intent intent = new Intent();
+//									intent.setAction("android.settings.USAGE_ACCESS_SETTINGS");
+//									startActivity(intent);
+//									di.dismiss();
+//								}
+//							}).show();
+//					mWindowSwitch.setChecked(false);
+//				}
+				else {
 					DatabaseUtil.setAppInitiated(true);
 					DatabaseUtil.setIsShowWindow(isChecked);
 					if (!isChecked) {

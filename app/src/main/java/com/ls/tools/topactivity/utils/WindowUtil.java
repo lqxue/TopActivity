@@ -15,11 +15,11 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ls.tools.topactivity.R;
 import com.ls.tools.topactivity.model.NotificationMonitor;
 import com.ls.tools.topactivity.service.QuickSettingsService;
-import com.ls.tools.topactivity.ui.BackgroundActivity;
 import com.ls.tools.topactivity.ui.MainActivity;
 
 public class WindowUtil {
@@ -66,20 +66,20 @@ public class WindowUtil {
 
 		appName.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				copyString(context, text, "App name copied");
+				copyString(context, appName.getText().toString().trim());
 			}
 		});
 
 		packageName.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				copyString(context, text, "Package name copied");
-				uninstall(context,packageName.getText().toString().trim());
+				copyString(context, packageName.getText().toString().trim());
+//				uninstall(context,packageName.getText().toString().trim());
 			}
 		});
 
 		className.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				copyString(context, text1, "Class name copied");
+				copyString(context, className.getText().toString().trim());
 			}
 		});
 
@@ -148,15 +148,23 @@ public class WindowUtil {
 		return false;
 	}
 
-	private static void copyString(Context context, String str, String msg) {
-		if (Build.VERSION.SDK_INT < 29) {
-			ClipData clip = ClipData.newPlainText("Current Activity", str);
-			clipboard.setPrimaryClip(clip);
-		} else {
-			context.startActivity(
-					new Intent(context, BackgroundActivity.class).putExtra(BackgroundActivity.STRING_COPY, str)
-							.putExtra(BackgroundActivity.COPY_MSG, msg).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+	private static void copyString(Context context, String str) {
+		Object systemService = context.getSystemService(Context.CLIPBOARD_SERVICE);
+		if (systemService instanceof ClipboardManager){
+			((ClipboardManager) systemService).setPrimaryClip(ClipData.newPlainText(null,str));
+			if (((ClipboardManager) systemService).hasPrimaryClip()){
+				((ClipboardManager) systemService).getPrimaryClip().getItemAt(0).getText();
+				Toast.makeText(context,"复制成功",Toast.LENGTH_LONG).show();
+			}
 		}
+//		if (Build.VERSION.SDK_INT < 29) {
+//			ClipData clip = ClipData.newPlainText("Current Activity", str);
+//			clipboard.setPrimaryClip(clip);
+//		} else {
+//			context.startActivity(
+//					new Intent(context, BackgroundActivity.class).putExtra(BackgroundActivity.STRING_COPY, str)
+//							.putExtra(BackgroundActivity.COPY_MSG, msg).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+//		}
 	}
 
 	public static String getAppName(Context context, String pkg) {
